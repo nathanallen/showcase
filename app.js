@@ -22,8 +22,6 @@ $(function(){
     }
   }())
 
-
-
   let renderDemo = (function() {
     let $target = $("#main");
     return function( project ){
@@ -31,16 +29,27 @@ $(function(){
     }
   }());
 
+  // Display default project demo
   let project = window.data.projects[0];
   renderDemo(project);
 
-  $("#sidebar")
-    .html(
-        window.data.projects.map(function(project){
-          return buildProject(project).click(function(){
-            renderDemo(project);
-          });
-        })
-    );
+  // Display list of projects in sidebar
+  $("#sidebar").html(
+
+      window.data.projects.map(function(project){
+        return buildProject(project).click(function(){
+
+          $('.active').removeClass('active');
+          $(this).addClass('active');
+
+          renderDemo(project);
+
+        });
+      })
+
+  );
+
+  // Indicate active project in sidebar
+  $(".project:eq(0)").addClass('active');
 
 });

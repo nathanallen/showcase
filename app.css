@@ -15,3 +15,8 @@ iframe {
   background-color: cyan;
   cursor: pointer;
 }
+
+.project.active h4:after {
+  padding-left: 0.5em;
+  content: "👈";
+}
