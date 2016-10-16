@@ -1,7 +1,7 @@
 window.data = {
   "projects": [
     {
-      "title": "Raise The Error",
+      "title": "raise-the-error",
       "homepage_url": "/raise-the-error",
       "github_url": "https://github.com/nathanallen/raise-the-error",
       "description": "Can you reproduce errors in javascript?"

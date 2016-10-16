@@ -7,8 +7,8 @@ $(function(){
     return function (config){
       return $(
         template
-          .replace('{{title}}',       config.title)
-          .replace('{{description}}', config.description)
+          .replace(new RegExp('{{title}}',       'g'),  config.title)
+          .replace(new RegExp('{{description}}', 'g'),  config.description)
       );
     }
 
@@ -29,27 +29,25 @@ $(function(){
     }
   }());
 
-  // Display default project demo
-  let project = window.data.projects[0];
-  renderDemo(project);
-
   // Display list of projects in sidebar
   $("#sidebar").html(
 
       window.data.projects.map(function(project){
         return buildProject(project).click(function(){
 
+          renderDemo(project);
+
+          // change location hash without adding to push state
+          window.history.replaceState(null, null, "#"+project.title);
           $('.active').removeClass('active');
           $(this).addClass('active');
-
-          renderDemo(project);
 
         });
       })
 
   );
 
-  // Indicate active project in sidebar
-  $(".project:eq(0)").addClass('active');
+  // Display current or default demo
+  $(location.hash || ".project:eq(0)").click();
 
 });
