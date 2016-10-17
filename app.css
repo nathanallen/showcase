@@ -3,6 +3,10 @@ iframe {
   height: 90vh;
 }
 
+h5, p {
+  margin-bottom: 0.25em;
+}
+
 #sidebar {
   overflow: scroll;
   height: 90vh;
@@ -12,11 +16,11 @@ iframe {
   padding: 1em;
 }
 .project:hover {
-  background-color: cyan;
+  background-color: #f7f7f7;
   cursor: pointer;
 }
 
-.project.active h4:after {
+.project.active .title:after {
   padding-left: 0.5em;
   content: "👈";
 }
