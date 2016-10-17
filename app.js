@@ -16,7 +16,11 @@ $(function(){
 
   let buildEmbed = (function(){
     let iframe = document.createElement("iframe");
+    iframe.onload = function(){
+      $(iframe).removeClass("loading");
+    }
     return function(config){
+      $(iframe).addClass("loading");
       iframe.src = "http://nathan.codes/" + config.homepage_url;
       return iframe;
     }
