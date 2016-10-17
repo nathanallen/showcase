@@ -30,24 +30,28 @@ $(function(){
   }());
 
   // Display list of projects in sidebar
-  $("#sidebar").html(
+  let $sidebar = $("#sidebar").html(
 
       window.data.projects.map(function(project){
         return buildProject(project).click(function(){
 
-          renderDemo(project);
-
-          // change location hash without adding to push state
+          // update location hash without state change
           window.history.replaceState(null, null, "#"+project.title);
           $('.active').removeClass('active');
           $(this).addClass('active');
+
+          renderDemo(project);
 
         });
       })
 
   );
 
-  // Display current or default demo
-  $(location.hash || ".project:eq(0)").click();
+  // activate current demo
+  let $current = $(location.hash || ".project:eq(0)").click();
+  // scroll sidebar label into view
+  $sidebar.animate({
+    scrollTop: $current.offset().top
+  });
 
 });
