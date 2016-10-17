@@ -47,11 +47,37 @@ $(function(){
 
   );
 
-  // activate current demo
+  // activate current demo // FIXME: no iframe loads if hash is incorrect
   let $current = $(location.hash || ".project:eq(0)").click();
   // scroll sidebar label into view
   $sidebar.animate({
     scrollTop: $current.offset().top
   });
+
+  let updateScrollIndicator = (function(){
+    // displays an up/down arrow in scroll area
+    // if there is overflow content above or below the fold
+    let waiting = false;
+    let top     = $sidebar.offset().top;
+    let bottom  = $sidebar.height();
+    let $first  = $sidebar.children('.project:first');
+    let $last   = $sidebar.children('.project:last');
+    return function() {
+      waiting = true;
+      if ($first.offset().top < 0){
+        $sidebar.addClass('can-scroll-up');
+      } else {
+        $sidebar.removeClass('can-scroll-up');
+      }
+      if ($last.offset().top > bottom) {
+        $sidebar.addClass('can-scroll-down');
+      } else {
+        $sidebar.removeClass('can-scroll-down');
+      }
+      waiting = false;
+    }
+  }());
+
+  $sidebar.scroll(updateScrollIndicator);
 
 });
