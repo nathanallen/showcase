@@ -60,25 +60,25 @@ $(function(){
   var updateScrollIndicator = (function(){
     // displays an up/down arrow in scroll area
     // if there is overflow content above or below the fold
-    var waiting = false;
-    var top     = $sidebar.offset().top;
-    var bottom  = $sidebar.height();
     var $first  = $sidebar.children('.project:first');
     var $last   = $sidebar.children('.project:last');
-    return function() {
-      waiting = true;
-      if ($first.offset().top < 0){
+    var top     = $sidebar.offset().top;
+    var bottom  = $sidebar.height() - ($last.outerHeight() * .66) + top;
+    var last_height = $last.outerHeight();
+    return _.throttle(function() {
+      if ($first.offset().top < top){
         $sidebar.addClass('can-scroll-up');
       } else {
         $sidebar.removeClass('can-scroll-up');
       }
+
       if ($last.offset().top > bottom) {
         $sidebar.addClass('can-scroll-down');
       } else {
         $sidebar.removeClass('can-scroll-down');
       }
-      waiting = false;
-    }
+    },100);
+
   }());
 
   $sidebar.scroll(updateScrollIndicator);
