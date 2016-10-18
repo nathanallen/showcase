@@ -1,8 +1,7 @@
-
 $(function(){
 
-  let buildProject = (function(){
-    let template = $('#project-tmpl').html();
+  var buildProject = (function(){
+    var template = $('#project-tmpl').html();
 
     return function (config){
       return $(
@@ -14,8 +13,8 @@ $(function(){
 
   }())
 
-  let buildEmbed = (function(){
-    let iframe = document.createElement("iframe");
+  var buildEmbed = (function(){
+    var iframe = document.createElement("iframe");
     iframe.onload = function(){
       $(iframe).removeClass("loading");
     }
@@ -26,15 +25,15 @@ $(function(){
     }
   }())
 
-  let renderDemo = (function() {
-    let $target = $("#main");
+  var renderDemo = (function() {
+    var $target = $("#main");
     return function( project ){
       $target.html( buildEmbed(project || this) );
     }
   }());
 
   // Display list of projects in sidebar
-  let $sidebar = $("#sidebar").html(
+  var $sidebar = $("#sidebar").html(
 
       window.data.projects.map(function(project){
         return buildProject(project).click(function(){
@@ -52,20 +51,20 @@ $(function(){
   );
 
   // activate current demo // FIXME: no iframe loads if hash is incorrect
-  let $current = $(location.hash || ".project:eq(0)").click();
+  var $current = $(location.hash || ".project:eq(0)").click();
   // scroll sidebar label into view
   $sidebar.animate({
     scrollTop: $current.offset().top
   });
 
-  let updateScrollIndicator = (function(){
+  var updateScrollIndicator = (function(){
     // displays an up/down arrow in scroll area
     // if there is overflow content above or below the fold
-    let waiting = false;
-    let top     = $sidebar.offset().top;
-    let bottom  = $sidebar.height();
-    let $first  = $sidebar.children('.project:first');
-    let $last   = $sidebar.children('.project:last');
+    var waiting = false;
+    var top     = $sidebar.offset().top;
+    var bottom  = $sidebar.height();
+    var $first  = $sidebar.children('.project:first');
+    var $last   = $sidebar.children('.project:last');
     return function() {
       waiting = true;
       if ($first.offset().top < 0){
