@@ -31,6 +31,12 @@ window.data = {
       "description": "Simple drawing app using event listeners. jQuery review lab."
     },
     {
+      "title": "color-me-angular",
+      "homepage_url": "/color-me-angular",
+      "github_url": "https://github.com/nathanallen/color-me-angular",
+      "description": "Explore 148 CSS color names. Angular.js routing lab."
+    },
+    {
       "title": "collapse",
       "homepage_url": "/collapse",
       "github_url": "https://github.com/nathanallen/collapse",
