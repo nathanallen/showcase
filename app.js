@@ -62,9 +62,17 @@ $(function(){
     // if there is overflow content above or below the fold
     var $first  = $sidebar.children('.project:first');
     var $last   = $sidebar.children('.project:last');
-    var top     = $sidebar.offset().top;
-    var bottom  = $sidebar.height() - ($last.outerHeight() * .66) + top;
-    var last_height = $last.outerHeight();
+    var top_offset = $sidebar.offset().top
+    var top     = top_offset - (.33 * $first.outerHeight());
+    var bottom  = $sidebar.height() - (.66 * $last.outerHeight()) + top_offset;
+
+    // re-calculate distance to top/bottom of sidebar on resize
+    $(window).resize(_.throttle(function(){
+      top_offset = $sidebar.offset().top;
+      top     = top_offset - (.33 * $first.outerHeight());
+      bottom  = $sidebar.height() - (.66 * $last.outerHeight()) + top_offset;
+    },100));
+
     return _.throttle(function() {
       if ($first.offset().top < top){
         $sidebar.addClass('can-scroll-up');
