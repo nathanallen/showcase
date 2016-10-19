@@ -83,6 +83,12 @@ window.data = {
       "homepage_url": "/tic_tac_toe",
       "github_url": "https://github.com/nathanallen/tic_tac_toe",
       "description": "An OO game of Tic Tac Toe."
+    },
+    {
+      "title": "iframe-inception",
+      "homepage_url": "/iframe-inception",
+      "github_url": "https://github.com/nathanallen/iframe-inception",
+      "description": "Demonstrates a recursive scenario in which a webpage loads an iframe pointing at itself. Because inception ¯\\_(ツ)_/¯"
     }
   ]
 }
