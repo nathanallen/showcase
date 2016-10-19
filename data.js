@@ -19,6 +19,12 @@ window.data = {
       "description": "Mashup of Google Maps and earthquake readings from the past week. AJAX learning lab."
     },
     {
+      "title": "racing_game",
+      "homepage_url": "/racing_game",
+      "github_url": "https://github.com/nathanallen/racing_game",
+      "description": "A fully OO jquery racing game. The six-player demo uses keys 0-5 for movement."
+    },
+    {
       "title": "giffaw",
       "homepage_url": "/giffaw",
       "github_url": "https://github.com/nathanallen/giffaw",
