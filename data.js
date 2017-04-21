@@ -7,6 +7,12 @@ window.data = {
       "description": "Makes a game out of reproducing common Javascript errors."
     },
     {
+      "title": "emoji-finder",
+      "homepage_url": "/emoji-finder",
+      "github_url": "https://github.com/nathanallen/emoji-finder",
+      "description": "Built for a 1-day intro to web development workshop. Filters emoji by tag."
+    },
+    {
       "title": "bikegnosis",
       "homepage_url": "/bikegnosis",
       "github_url": "https://github.com/nathanallen/bikegnosis",
