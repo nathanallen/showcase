@@ -49,6 +49,30 @@ window.data = {
       "description": "Explore 148 CSS color names. Angular.js routing lab."
     },
     {
+      "title": "symbol-grid",
+      "homepage_url": "/creative-code-sketches/symbol-grid",
+      "github_url": "https://github.com/creative-code-sketches",
+      "description": "An endless cycling grid of unicode characters."
+    },
+    {
+      "title": "paint-sentence",
+      "homepage_url": "/creative-code-sketches/paint-sentence",
+      "github_url": "https://github.com/creative-code-sketches",
+      "description": "Paint sentences on a p5js canvas."
+    },
+    {
+      "title": "boom-box",
+      "homepage_url": "/creative-code-sketches/boom-box",
+      "github_url": "https://github.com/creative-code-sketches",
+      "description": "Interactive WebAudio visualization with p5js"
+    },
+    {
+      "title": "de-stijl-diorama",
+      "homepage_url": "/de-stijl-diorama",
+      "github_url": "https://github.com/nathanallen/de-stijl-diorama",
+      "description": "Experimental 2d diorama effect on window resize. Based on an illustration by Gouden Vlinders Franke."
+    },
+    {
       "title": "collapse",
       "homepage_url": "/collapse",
       "github_url": "https://github.com/nathanallen/collapse",
