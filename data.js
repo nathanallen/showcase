@@ -64,6 +64,13 @@ window.data = {
       "description": "An endless cycling grid of unicode characters."
     },
     {
+      "title": "singing-bowls",
+      "year": 2017,
+      "homepage_url": "/singing-bowls",
+      "github_url": "https://github.com/singing-bowls",
+      "description": "Interactive exploration of the resonant frequencies of physical objects."
+    },
+    {
       "title": "paint-sentence",
       "year": 2017,
       "homepage_url": "/creative-code-sketches/paint-sentence",
