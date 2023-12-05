@@ -7,6 +7,7 @@ $(function(){
       return $(
         template
           .replace(new RegExp('{{title}}',       'g'),  config.title)
+          .replace(new RegExp('{{year}}',       'g'),   config.year)
           .replace(new RegExp('{{description}}', 'g'),  config.description)
       );
     }

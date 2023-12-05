@@ -27,6 +27,10 @@ iframe.loading {
 h5, p {
   margin-bottom: 0.25em;
 }
+.year {
+  font-size: 1.4rem;
+  color: #8d8d8d;
+}
 
 .project {
   padding: 1em;
